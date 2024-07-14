@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechKart</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333; 
+      }
+
+      header {
+        background-color: #2b265b; 
+        color: #fff; 
+        padding: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section#home {
+        background-color: #2b265b;
+        color: #fff;
+        text-align: center;
+        padding: 40px;
+      }
+
+      section#products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 100%;
+        max-height: 100%;
+        justify-content: center;
+        left: 100px;
+      }
+
+      .product {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .product img {
+        border-radius: 4px;
+      }
+
+      .product button,a{
+        background-color: #0f0c29; 
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo" style="font-size:200%">TECHKART</div>
+      <nav>
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="{{url_for('about')}}">About Us</a></li>
+          <li><a href="{{url_for('profile')}}">{{Profile}}</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 300%;">Welcome to TECHKART</h1>
+        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 150%;">
+          Discover our amazing products and experience the best shopping
+          experience.
+        </h3>
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 150%;">"Discover a world of convenience and style at TECHKART - where every click opens the door to endless possibilities. Elevate your shopping experience with a curated selection, seamless transactions, and the joy of finding exactly what you love. Welcome to a new era of online shopping, tailored just for you."</p>
+      </section>
+
+      <h2 style="text-align: center; font-size: 300%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:#2b265b ;" f>Our Products</h2><br>
+      <section id="products">
+        <div class="product">
+          <img src="static/Apple.jpeg" alt="Mobile" height="60%" width="20%"/>
+          <h3>Mobiles</h3>
+          <p>High-quality product with amazing features.</p>
+          <button><a href="{{url_for('product',type='mobile')}}" style="color: white; text-decoration: none;" target="_blank">View more...</a></button>
+        </div>
+        
+        <div class="product">
+          <img src="static/Macbook Air15.jpeg" alt="Laptops" height="60%" width="90%" >
+          <h3>Laptops</h3>
+          <p>Another fantastic product.</p>
+          <button><a href="{{url_for('product',type='laptop')}}" style="color: white; text-decoration: none;" target="_blank" >View more...</a></button>
+        </div>
+
+        <div class="product">
+            <img src="static/redmi 43inch.jpg" alt="TV" height="70%" width="80%" >
+            <h3>TVs</h3>
+            <p>For Colourful Moment.</p>
+            <button><a href="{{url_for('product',type='Tv')}}" style="color: white; text-decoration: none;" target="_self" >View more...</a></button>
+          </div>
+
+          <div class="product">
+            <img src="static/samsung 183l.jpg" alt="REFRIGERATOR" height="70%" width="40%" >
+            <h3>Refrigerator</h3>
+            <p>Another Chill product.</p>
+            <button><a href="{{url_for('product',type='refrigerator')}}" style="color: white; text-decoration: none;" target="_blank" >View more...</a></button>
+          </div>
+
+      </section>
+    </main>
+
+  </body>
+</html>
